@@ -1,32 +1,40 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html"; charset="URF-8"/>
-    <link rel="stylesheet" href="../static/styles.css">
     <title th:text="${title}"></title>
+    <!--/*/ <th:block th:include="fragments/general.html :: headerfiles"/>  /*/-->
 
 </head>
 <body>
-    <p>
-        <h2>Users:</h2>
-    <table>
-        <thead>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>City</th>
-        </thead>
-        <tbody>
-        <tr th:each="user : ${users}">
-            <td th:text="${user.id}"></td>
-            <td th:text="${user.name}"></td>
-            <td th:text="${user.surname}"></td>
-            <td th:text="${user.email}"></td>
-            <td th:text="${user.city}"></td>
-        </tr>
+<p>
+<h2>Users:</h2>
+<table>
+    <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>City</th>
+<!--
+    <th>methods</th>
+-->
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.city}"></td>
+        <td th:text="${user.me}"></td>
+<!--        <td>
+            <a th:href="|/user/view/${user.id}|" >view</a>
+        </td>-->
+    </tr>
 
-        </tbody>
-    </table>
-    </p>
+    </tbody>
+</table>
+</p>
+<div th:replace="fragments/language.html :: language"/>
+<footer th:replace="fragments/general.html :: footer(company='exemple.com', year='2030')"></footer>
 </body>
 </html>
