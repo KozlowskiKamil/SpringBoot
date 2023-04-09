@@ -5,7 +5,7 @@
     <!--/*/ <th:block th:include="fragments/general.html :: headerfiles"/>  /*/-->
 </head>
 <body>
-<div class="container">
+<div class="snippet-container">
     <h3>User id: <span th:text="${user.id}"></span></h3>
     <div>
         <p>Name: <span th:text="${user.name}"/></p>
@@ -13,9 +13,8 @@
         <p>Email: <span th:text="${user.email}"/></p>
         <p>City: <span th:text="${user.city}"/></p>
     </div>
-
+    <div th:replace="fragments/language.html :: language"/>
+    <footer th:replace="fragments/general.html :: footer(company='exemple.com', year='2030')"></footer>
 </div>
-<div th:replace="fragments/language.html :: language"/>
-<footer th:replace="fragments/general.html :: footer(company='exemple.com', year='2030')"></footer>
 </body>
 </html>
