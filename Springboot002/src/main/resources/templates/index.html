@@ -14,9 +14,7 @@
     <th>Name</th>
     <th>Surname</th>
     <th>City</th>
-<!--
     <th>methods</th>
--->
     </thead>
     <tbody>
     <tr th:each="user : ${users}">
@@ -25,10 +23,9 @@
         <td th:text="${user.surname}"></td>
         <td th:text="${user.email}"></td>
         <td th:text="${user.city}"></td>
-        <td th:text="${user.me}"></td>
-<!--        <td>
+        <td>
             <a th:href="|/user/view/${user.id}|" >view</a>
-        </td>-->
+        </td>
     </tr>
 
     </tbody>
